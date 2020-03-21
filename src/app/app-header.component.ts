@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
       <header class="header">
           <div class="g-row">
               <div class="g-col">
-                  <h1 class="header__title">Todo Angular Firebase</h1>
+                  <h1 class="header__title" title="You can manage you todo in this Application">Todo Angular+Firebase Application</h1>
 
                   <ul class="header__links">
                       <li *ngIf="authenticated"><a class="header__link" (click)="signOut.emit()" href="#">Sign out</a>

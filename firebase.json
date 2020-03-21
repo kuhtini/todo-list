@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "todo-app",
-      "public": "dist/todo-app",
+      "target": "todo-list",
+      "public": "dist/todo-list",
       "ignore": [
         "firebase.json",
         "**/.*",

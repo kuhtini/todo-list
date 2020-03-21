@@ -1,10 +1,11 @@
 {
-  "name": "todo-app",
+  "name": "todo-list",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "firebase deploy --project rkuhtini-todo-list",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

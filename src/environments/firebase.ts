@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-    apiKey: 'AIzaSyAxtbisQWY_0GRILtD4ELt-BKOLabKBYAk',
-    authDomain: 'pwa-aws-serverless.firebaseapp.com',
-    databaseURL: 'https://pwa-aws-serverless.firebaseio.com',
-    projectId: 'pwa-aws-serverless',
-    storageBucket: 'pwa-aws-serverless.appspot.com',
-    messagingSenderId: '882432262140',
-    appId: '1:882432262140:web:a7c1576467bb25bf19fc79'
+    apiKey: "AIzaSyBI53CDjeu3qLqZg0GPpi36LWr0akl_cpg",
+    authDomain: "rkuhtini-todo-list.webapp.com",
+    databaseURL: "https://rkuhtini-todo-list.firebaseio.com",
+    projectId: "rkuhtini-todo-list",
+    storageBucket: "rkuhtini-todo-list.appspot.com",
+    messagingSenderId: "804702962413",
+    appId: "1:804702962413:web:fa47990113fce641e482e4"
 };

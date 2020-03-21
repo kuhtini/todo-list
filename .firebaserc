@@ -1,9 +1,9 @@
 {
   "targets": {
-    "pwa-aws-serverless": {
+    "rkuhtini-todo-list": {
       "hosting": {
-        "todo": [
-          "pwa-aws-serverless"
+        "todo-list": [
+          "rkuhtini-todo-list"
         ]
       }
     }
