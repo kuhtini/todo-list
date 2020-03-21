@@ -1,4 +1,4 @@
-import { switchMap, take } from 'rxjs/operators';
+import { map, switchMap, take } from 'rxjs/operators';
 
 
 import { Injectable } from '@angular/core';
@@ -29,24 +29,26 @@ export class TasksService {
         this.tasks$.subscribe((tasks$ => console.log('tasks$', tasks$)));
 
         this.filteredTasks$ = this.filter$.pipe(
-          switchMap(filterValue => {
-            console.log('switchMap', filterValue);
-            console.log('  afDb.database.ref(path).toString();',   afDb.database.ref(path).toString());
-            return afDb.list<ITask>(path, (ref) => {
-              return ref.orderByChild('completed').equalTo(filterValue);
-            }).valueChanges();
-          })
+          switchMap(filterValue =>
+            afDb.list<ITask>(path, (ref) => ref.orderByChild('completed').equalTo(filterValue))
+              .snapshotChanges()
+              .pipe(
+                map(changes => this.getITasks(changes)
+                )
+              )
+          )
         );
-        this.filteredTasks$.subscribe((tasks$ => console.log('filteredTasks$', tasks$)));
-
         this.visibleTasks$ = this.filter$.pipe(
           switchMap(filter => (filter === null ? this.tasks$ : this.filteredTasks$)));
       });
   }
 
 
+  private getITasks(changes) {
+    return changes.map(c => ({$key: c.payload.key, ...c.payload.val()} as ITask));
+  }
+
   filterTasks(filter: string): void {
-    console.log('filterTasks', filter);
     switch (filter) {
       case 'false':
         this.filter$.next(false);
