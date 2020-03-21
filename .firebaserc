@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rkuhtini-todo-list": {
+      "hosting": {
+        "todo-list": [
+          "rkuhtini-todo-list"
+        ]
+      }
+    }
+  }
+}
