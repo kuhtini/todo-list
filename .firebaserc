@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pwa-aws-serverless": {
+      "hosting": {
+        "todo": [
+          "pwa-aws-serverless"
+        ]
+      }
+    }
+  }
+}

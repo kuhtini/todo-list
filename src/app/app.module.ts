@@ -1,18 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+// components
 import { AppComponent } from './app.component';
+import { AppHeaderComponent } from './app-header.component';
+// modules
+import { AuthModule } from './auth';
+import { FirebaseModule } from './firebase';
+import { TasksModule } from './tasks';
+
 
 @NgModule({
-  declarations: [
+  bootstrap: [
     AppComponent
+  ],
+  declarations: [
+    AppComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    RouterModule.forRoot([], {useHash: false}),
+
+    AuthModule,
+    FirebaseModule,
+    TasksModule
+  ]
 })
-export class AppModule { }
+export class AppModule {
+}
